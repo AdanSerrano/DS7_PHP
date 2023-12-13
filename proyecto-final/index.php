@@ -8,7 +8,7 @@ if (isset($_SESSION['user_id'])) {
 } else {
     $user_id = '';
 }
-if (isset($_POST[' logout '])) {
+if (isset($_POST['logout'])) {
     session_destroy();
     header("location: login.php");
 }

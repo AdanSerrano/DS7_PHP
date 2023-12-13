@@ -3,11 +3,12 @@ CREATE TABLE users (
     name VARCHAR(255),
     email VARCHAR(255),
     password VARCHAR(255),
-    user_type VARCHAR(50)
 );
 
+INSERT INTO users (id, name, email, password) VALUES('13123jasdhfasjdfhasf', 'cafe green', 'adanu0503@gmail.com', '123456');
+
 CREATE TABLE products (
-    id VARCHAR(100) PRIMARY KEY,
+    id VARCHAR(100) PRIMARY KEY, 
     name VARCHAR(255),
     price DECIMAL(10, 2),
     image MEDIUMBLOB,
