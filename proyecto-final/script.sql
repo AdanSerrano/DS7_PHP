@@ -76,3 +76,8 @@ CREATE PROCEDURE sp_listar_services()
 BEGIN
     SELECT * FROM services;
 END
+
+CREATE PROCEDURE sp_listar_usuarios()
+BEGIN
+    SELECT * FROM users;
+END

@@ -1,6 +1,6 @@
 <?php
 require_once 'components/modelo.php';
-require_once("components/products.php");
+require_once("components/query.php");
 session_start();
 
 if (isset($_SESSION['user_id'])) {
@@ -10,6 +10,10 @@ if (isset($_SESSION['user_id'])) {
 }
 if (isset($_POST['logout'])) {
     session_destroy();
+    header("location: login.php");
+}
+
+if ($user_id == '') {
     header("location: login.php");
 }
 
@@ -60,11 +64,12 @@ $nfilasProducts = count($products);
             <div class="right-arrow"><i class=" bx bxs-right-arrow"></i></div> -->
         </section>
         <section class="thumb">
+            <h1>Nuestros Servicios</h1>
             <div class="box-container">
                 <?php
                 if ($nfilasServices > 0) {
                     foreach ($services as $resultado) {
-                        echo "<div class='box'>";
+                        echo "<div class='box content'>";
                         echo "<img class='img' src='img/" . $resultado['image'] . "' alt=''>";
                         echo "<h3>" . $resultado['name'] . "</h3>";
                         echo "<p>" . $resultado['description'] . "</p>";

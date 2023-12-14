@@ -18,11 +18,10 @@ if ($user_id == '') {
     header("location: login.php");
 }
 
+$obj_users = new Products();
+$users = $obj_users->listarUsuarios();
 
-$obj_products = new Products();
-$products = $obj_products->listarProducts();
-
-$nfilas = count($products);
+$nfilas = count($users);
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +40,7 @@ $nfilas = count($products);
 </head>
 
 <body>
-    <?php include_once 'components/header.php'; ?>
+    <?php include_once 'components/header_dashboard.php'; ?>
     <main class="main">
         <section class="banner">
             <h1>Products</h1>
@@ -52,14 +51,13 @@ $nfilas = count($products);
 
         <button type="submit" name="add_to_cart"></button>
         <section class="products">
-            <section class="box-container">
+            <section class="box-container" style='display: flex; flex-direction: column;justify-content:start; align-items:start; '>
                 <?php
                 if ($nfilas > 0) {
-                    foreach ($products as $resultado) {
-                        echo "<div class='content'>";
-                        echo "<img class='img' src='img/" . $resultado['image'] . "' alt=''>";
+                    foreach ($users as $resultado) {
+                        echo "<div class='content' style='width: 100%; display:flex; flex-direction: column; align-items:start;'>";
                         echo "<h3>" . $resultado['name'] . "</h3>";
-                        echo "<p class='price'>" . $resultado['price'] . "</p>";
+                        echo "<p class='price'>" . $resultado['email'] . "</p>";
                         echo "</div>";
                     }
                 } else {

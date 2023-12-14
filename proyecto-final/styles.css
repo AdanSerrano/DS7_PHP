@@ -845,6 +845,13 @@ textarea {
 
 }
 
+.content {
+    box-shadow: var(--box-shadow);
+    color: black;
+    text-align: center;
+    border-radius: 5%;
+}
+
 .products .box-container .content .price {
     color: var(--green);
     font-size: 1rem;

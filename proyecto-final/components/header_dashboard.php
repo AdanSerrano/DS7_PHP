@@ -1,5 +1,4 @@
 <?php
-
 if (isset($_SESSION['user_id'])) {
     $user_id = $_SESSION['user_id'];
 } else {
@@ -21,10 +20,9 @@ if ($user_id == '') {
         <a href="index.php" class="logo"><img src="img/logo.jpg"></a>
         <nav class="navbar">
             <a href="index.php" class="logo">Home</a>
-            <a href="view_products.php" class="logo">Products</a>
-            <a href="about.php" class="logo">Aboutt us</a>
-            <a href="contact.php" class="logo">contact us</a>
-            <a href="dashboard.php" class="logo">Dashboard</a>
+            <a href="form_products.php" class="logo">Productos</a>
+            <a href="form_services.php" class="logo">Servicios</a>
+            <a href="view_users.php" class="logo">Usuarios</a>
         </nav>
         <div class="icons">
             <i class="bx bxs-user" id="user-btn">
